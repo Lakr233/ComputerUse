@@ -106,7 +106,7 @@ extension Workflow {
             try Task.checkCancellation()
 
             logger.info("AI Response received. Reasoning: \(reasoning), Content: \(content), Tool calls: \(tools.count)")
-            
+
             messages.append(.assistant(
                 content: content.isEmpty ? nil : .text(content),
                 toolCalls: tools.isEmpty ? nil : tools.map { call in

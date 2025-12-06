@@ -9,8 +9,8 @@ import AppKit
 import Combine
 import CoreGraphics
 import MSDisplayLink
-import SpringInterpolation
 import os
+import SpringInterpolation
 
 @MainActor
 class PointerViewModel: NSObject, ObservableObject {
@@ -93,17 +93,7 @@ class PointerViewModel: NSObject, ObservableObject {
     /// 将 Cocoa 坐标（左下角原点）转换为 Quartz 坐标（左上角原点）
     /// CGWarpMouseCursorPosition 使用 Quartz 坐标系
     func quartzLocation(for cocoaPoint: CGPoint) -> CGPoint {
-        // Cocoa 坐标系：原点在主屏幕左下角，Y 向上增加
-        // Quartz 坐标系：原点在主屏幕左上角，Y 向下增加
-        // 转换公式：quartzY = 主屏幕高度 - cocoaY
-        guard let primaryScreen = NSScreen.screens.first else {
-            return cocoaPoint
-        }
-        let primaryScreenHeight = primaryScreen.frame.height
-        return CGPoint(
-            x: cocoaPoint.x,
-            y: primaryScreenHeight - cocoaPoint.y,
-        )
+        CoordinateConverter.cocoaToQuartz(cocoaPoint)
     }
 
     private static func center(of rect: CGRect) -> CGPoint {

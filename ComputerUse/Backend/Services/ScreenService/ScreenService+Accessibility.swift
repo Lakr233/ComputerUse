@@ -13,34 +13,12 @@ extension ScreenService {
     /// Converts Quartz coordinates (top-left origin) to Cocoa coordinates (bottom-left origin)
     /// Accessibility API uses Quartz coordinate system
     func convertQuartzToCocoa(_ quartzPoint: CGPoint) -> CGPoint {
-        // Get the primary screen height for conversion
-        // Quartz origin is at top-left of primary screen
-        // Cocoa origin is at bottom-left of primary screen
-        guard let primaryScreen = NSScreen.screens.first else {
-            return quartzPoint
-        }
-        let primaryScreenHeight = primaryScreen.frame.height
-        return CGPoint(
-            x: quartzPoint.x,
-            y: primaryScreenHeight - quartzPoint.y,
-        )
+        CoordinateConverter.quartzToCocoa(quartzPoint)
     }
 
     /// Converts a Quartz frame to Cocoa frame
     func convertQuartzFrameToCocoa(_ quartzFrame: CGRect) -> CGRect {
-        guard let primaryScreen = NSScreen.screens.first else {
-            return quartzFrame
-        }
-        let primaryScreenHeight = primaryScreen.frame.height
-        // The y coordinate in Cocoa is the bottom of the frame
-        // In Quartz, y is the top of the frame
-        let cocoaY = primaryScreenHeight - quartzFrame.origin.y - quartzFrame.height
-        return CGRect(
-            x: quartzFrame.origin.x,
-            y: cocoaY,
-            width: quartzFrame.width,
-            height: quartzFrame.height,
-        )
+        CoordinateConverter.quartzFrameToCocoa(quartzFrame)
     }
 
     // MARK: - Accessibility Element Collection
