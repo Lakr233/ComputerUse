@@ -7,8 +7,8 @@
 
 import AppKit
 @testable import ComputerUse
+import DisplayLink
 import Foundation
-import MSDisplayLink
 
 @MainActor
 class TestWindow: ScreenWindow {
@@ -40,8 +40,8 @@ class TestWindow: ScreenWindow {
 
         setupTextField()
 
-        let link = DisplayLink()
-        link.delegatingObject(self)
+        let link = DisplayLink(context: .main)
+        link.delegate = self
         displayLink = link
 
         layoutWindowContentView()
@@ -180,7 +180,7 @@ class TestWindow: ScreenWindow {
 }
 
 extension TestWindow: DisplayLinkDelegate {
-    nonisolated func synchronization(context _: DisplayLinkCallbackContext) {
-        MainActor.isolated { self.forceActivation() }
+    func displayLink(_: DisplayLink, didUpdate _: DisplayLinkFrame) {
+        forceActivation()
     }
 }

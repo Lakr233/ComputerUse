@@ -5,13 +5,13 @@
 //  Created by qaq on 2/12/2025.
 //
 
+import DisplayLink
 import Foundation
-import MSDisplayLink
 import SpringInterpolation
 
 extension PointerViewModel: DisplayLinkDelegate {
-    func synchronization(context: DisplayLinkCallbackContext) {
-        MainActor.isolated { self.handleDisplayLinkTick(delta: context.duration) }
+    func displayLink(_: DisplayLink, didUpdate frame: DisplayLinkFrame) {
+        handleDisplayLinkTick(delta: frame.duration)
     }
 
     func handleDisplayLinkTick(delta: TimeInterval) {

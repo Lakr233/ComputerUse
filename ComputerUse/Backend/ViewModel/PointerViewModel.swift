@@ -8,7 +8,7 @@
 import AppKit
 import Combine
 import CoreGraphics
-import MSDisplayLink
+import DisplayLink
 import os
 import SpringInterpolation
 
@@ -25,7 +25,7 @@ class PointerViewModel: NSObject, ObservableObject {
         mouseAbsoluteLocation
     }
 
-    private let displayLink = DisplayLink()
+    private let displayLink = DisplayLink(context: .main)
     var mouseLocationAnimator = SpringInterpolation2D(.init(
         angularFrequency: 10,
         dampingRatio: 1.0,
@@ -39,7 +39,7 @@ class PointerViewModel: NSObject, ObservableObject {
         self.screen = screen
         super.init()
         mouseAbsoluteLocation = PointerViewModel.center(of: screen.frame)
-        displayLink.delegatingObject(self)
+        displayLink.delegate = self
 
         mouseLocationAnimator.setCurrent(
             .init(

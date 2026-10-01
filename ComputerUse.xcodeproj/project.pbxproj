@@ -12,6 +12,7 @@
 		502E8E522EDEEC400088444D /* ChatClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 502E8E512EDEEC400088444D /* ChatClientKit */; };
 		5074F2312EE00DE4001B4BFF /* GPTEncoder in Frameworks */ = {isa = PBXBuildFile; productRef = 5074F2302EE00DE4001B4BFF /* GPTEncoder */; };
 		5077F5642ED6979A006E1769 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5077F5632ED6979A006E1769 /* SwifterSwift */; };
+		50D1A0032F90000000DA7A01 /* DisplayLink in Frameworks */ = {isa = PBXBuildFile; productRef = 50D1A0022F90000000DA7A01 /* DisplayLink */; };
 		5077F5672ED697A5006E1769 /* ColorfulX in Frameworks */ = {isa = PBXBuildFile; productRef = 5077F5662ED697A5006E1769 /* ColorfulX */; };
 		5077F56A2ED697BB006E1769 /* UIEffectKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5077F5692ED697BB006E1769 /* UIEffectKit */; };
 		50EF9F742EDEF86B000F9A57 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 50EF9F732EDEF86B000F9A57 /* SnapKit */; };
@@ -69,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5077F5672ED697A5006E1769 /* ColorfulX in Frameworks */,
+				50D1A0032F90000000DA7A01 /* DisplayLink in Frameworks */,
 				5077F56A2ED697BB006E1769 /* UIEffectKit in Frameworks */,
 				502E8E522EDEEC400088444D /* ChatClientKit in Frameworks */,
 				50EF9F742EDEF86B000F9A57 /* SnapKit in Frameworks */,
@@ -136,6 +138,7 @@
 				50EF9F732EDEF86B000F9A57 /* SnapKit */,
 				5029E4362EDF0CBB00308DD6 /* SpringInterpolation */,
 				5074F2302EE00DE4001B4BFF /* GPTEncoder */,
+				50D1A0022F90000000DA7A01 /* DisplayLink */,
 			);
 			productName = ComputerUse;
 			productReference = 500F79572ED6929F005B3B1A /* ComputerUse.app */;
@@ -200,6 +203,7 @@
 				50EF9F722EDEF86B000F9A57 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5029E4352EDF0CBB00308DD6 /* XCRemoteSwiftPackageReference "SpringInterpolation" */,
 				5074F22F2EE00DE4001B4BFF /* XCRemoteSwiftPackageReference "GPTEncoder" */,
+				50D1A0012F90000000DA7A01 /* XCRemoteSwiftPackageReference "DisplayLink" */,
 			);
 			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
@@ -552,7 +556,7 @@
 			repositoryURL = "https://github.com/Lakr233/ColorfulX";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.2;
+				minimumVersion = 6.1.1;
 			};
 		};
 		5077F5682ED697BB006E1769 /* XCRemoteSwiftPackageReference "UIEffectKit" */ = {
@@ -569,6 +573,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.1;
+			};
+		};
+		50D1A0012F90000000DA7A01 /* XCRemoteSwiftPackageReference "DisplayLink" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/DisplayLink.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -612,6 +624,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 50EF9F722EDEF86B000F9A57 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		50D1A0022F90000000DA7A01 /* DisplayLink */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50D1A0012F90000000DA7A01 /* XCRemoteSwiftPackageReference "DisplayLink" */;
+			productName = DisplayLink;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

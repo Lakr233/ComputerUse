@@ -1,5 +1,5 @@
 {
-  "originHash" : "0c55d010c2d11eb481d0720b1d9b411c8d592d6a1ac6e0b8f7ce4872c706c73a",
+  "originHash" : "de8d715147ce29e1da538c62e4cd15cd3186ce437216422fe8e608c46e3d9da1",
   "pins" : [
     {
       "identity" : "axswift",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Lakr233/ColorfulX",
       "state" : {
-        "revision" : "2f008fcffc7f23811b2ba70eda77c57223815bc3",
-        "version" : "6.0.2"
+        "revision" : "2f933d3c6be349c5c36084fb644f46988ba1f401",
+        "version" : "6.1.1"
       }
     },
     {
@@ -29,21 +29,21 @@
       }
     },
     {
+      "identity" : "displaylink",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lakr233/DisplayLink.git",
+      "state" : {
+        "revision" : "110051a86f2f074105c1502301d687c4c9597a1c",
+        "version" : "3.0.0"
+      }
+    },
+    {
       "identity" : "gptencoder",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alfianlosari/GPTEncoder",
       "state" : {
         "revision" : "a86968867ab4380e36b904a14c42215f71efe8b4",
         "version" : "1.0.4"
-      }
-    },
-    {
-      "identity" : "msdisplaylink",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Lakr233/MSDisplayLink.git",
-      "state" : {
-        "revision" : "ebf5823cb5fc1326639d9a05bc06d16bbe82989f",
-        "version" : "2.0.8"
       }
     },
     {
